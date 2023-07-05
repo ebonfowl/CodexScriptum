@@ -25,6 +25,12 @@ R script used to pull in neuropsych data, compute test results, then export the 
 # PrelimSEM.R  
 R script that fits CFA and SEM models for latent measures of muscle quality and walking ability and reports fit indices.  
 
+# parseGFF.py  
+Python script that parses the COVID-19 genome using fasta output.  
+
+# write_pinnacle_slurm.py  
+Python script that provides a template for creating SLURM scheduler scripts for an HPC cluster.
+
 # RonsCode.py  
 Python workflow for creating gene transcription trajectories using dynamo.  
 Note: this is not working code, rather it was created as a template for another researcher who was unfamiliar with omics work in python.  
