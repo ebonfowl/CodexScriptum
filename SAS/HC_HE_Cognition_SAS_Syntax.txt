@@ -1,0 +1,44 @@
+*ebonfowl: get data into SAS;
+
+proc import datafile="C:\Users\amcampit\Downloads\DCM Time 2 Data Analysis Set.Corrected.xlsx"
+out=COG dbms=xlsx replace;
+run;
+
+*Basic t-tests where class is the grouping variable (sex);
+
+proc ttest data=COG alpha=.05;
+var RBTOIT1;
+class SEX;
+run;
+
+proc ttest data=COG alpha=.05;
+var ECOGT1;
+class SEX;
+run;
+
+*ebonfowl: many descriptive stats pooled and grouped by class; 
+*normaltest option provides tests of normality;
+
+proc univariate data=COG normaltest;
+class GROUP SEX;
+var RBTOIT1 RBTOIT2 ECOGT1 ECOGT2;
+run;
+
+*ebonfowl: factorial ANOVA (2x2x2) model with 2 between factors (group, sex) and 1 within factor (RBTOIT1 RBTOIT2);
+*nouni option prevents running more univariate stats;
+*summary option generates ANOVA tables for each within contrast and the between IV effects;
+*printe option outputs the E matrix for all combinations and tests for sphericity;
+
+proc glm data=COG;
+class GROUP SEX;
+model RBTOIT1 RBTOIT2 = GROUP SEX/nouni;
+repeated time 2/summary printe;
+run;
+
+*ebonfowl: as above, but only one between factor (group);
+
+proc glm data=COG;
+class GROUP;
+model ECOGT1 ECOGT2 = GROUP/nouni;
+repeated time 2/summary printe;
+run;

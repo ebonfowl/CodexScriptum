@@ -1,0 +1,177 @@
+proc import datafile="C:\Users\amcampit\Downloads\DCM Time 2 Data Analysis Set.Corrected.xlsx"
+out=COG dbms=xlsx replace;
+run;
+
+proc means data=COG fw=8 maxdec=2 alpha=.05 clm mean std;
+var RBTOIT1 RBTOIT2 ECOGT1 ECOGT2;
+run;
+
+proc means data=COG fw=8 maxdec=2 alpha=.05 clm mean std;
+class GROUP;
+var RBTOIT1 RBTOIT2 ECOGT1 ECOGT2;
+run;
+
+proc ttest data=COG alpha=.05;
+var RBTOIT1;
+class SEX;
+run;
+
+proc ttest data=COG alpha=.05;
+var ECOGT1;
+class SEX;
+run;
+
+proc univariate data=COG normaltest;
+class GROUP;
+var RBTOIT1 RBTOIT2 ECOGT1 ECOGT2;
+run;
+
+proc glm data=COG;
+class GROUP;
+model RBTOIT1 = GROUP/p;
+means GROUP/hovtest=BF;
+run;
+
+proc glm data=COG;
+class GROUP;
+model RBTOIT2 = GROUP/p;
+means GROUP/hovtest=BF;
+run;
+
+proc glm data=COG;
+class SEX;
+model RBTOIT1 = SEX/p;
+means SEX/hovtest=BF;
+run;
+
+proc glm data=COG;
+class SEX;
+model RBTOIT2 = SEX/p;
+means SEX/hovtest=BF;
+run;
+
+proc glm data=COG;
+class GROUP SEX;
+model RBTOIT1 RBTOIT2 = GROUP SEX/nouni;
+repeated time 2;
+run;
+
+proc glm data=COG;
+class GROUP;
+model ECOGT1 = GROUP/p;
+means GROUP/hovtest=BF;
+run;
+
+proc glm data=COG;
+class GROUP;
+model ECOGT2 = GROUP/p;
+means GROUP/hovtest=BF;
+run;
+
+proc glm data=COG;
+class GROUP;
+model ECOGT1 ECOGT2 = GROUP/nouni;
+repeated time 2;
+run;
+
+*TO RUN AND SAVE AS PDF;
+
+ods pdf file="C:\Users\amcampit\Downloads\DCM Time 2 Data Analysis SAS Output.pdf";
+proc import datafile="C:\Users\amcampit\Downloads\DCM Time 2 Data Analysis Set.Corrected.xlsx"
+out=COG dbms=xlsx replace;
+run;
+
+proc means data=COG fw=8 maxdec=2 alpha=.05 clm mean std;
+var RBTOIT1 RBTOIT2 ECOGT1 ECOGT2;
+run;
+
+proc means data=COG fw=8 maxdec=2 alpha=.05 clm mean std;
+class GROUP;
+var RBTOIT1 RBTOIT2 ECOGT1 ECOGT2;
+run;
+
+proc ttest data=COG alpha=.05;
+var RBTOIT1;
+class SEX;
+run;
+
+proc ttest data=COG alpha=.05;
+var ECOGT1;
+class SEX;
+run;
+
+proc ttest data=COG alpha=.05;
+var RBTOIT1;
+class GROUP;
+run;
+
+proc ttest data=COG alpha=.05;
+var ECOGT1;
+class GROUP;
+run;
+
+proc univariate data=COG normaltest;
+class GROUP;
+var RBTOIT1 RBTOIT2 ECOGT1 ECOGT2;
+run;
+
+proc glm data=COG;
+class GROUP;
+model RBTOIT1 = GROUP/p;
+means GROUP/hovtest=BF;
+run;
+
+proc glm data=COG;
+class GROUP;
+model RBTOIT2 = GROUP/p;
+means GROUP/hovtest=BF;
+run;
+
+proc glm data=COG;
+class SEX;
+model RBTOIT1 = SEX/p;
+means SEX/hovtest=BF;
+run;
+
+proc glm data=COG;
+class SEX;
+model RBTOIT2 = SEX/p;
+means SEX/hovtest=BF;
+run;
+
+proc glm data=COG;
+class GROUP SEX;
+model RBTOIT1 RBTOIT2 = GROUP SEX/nouni;
+repeated time 2;
+run;
+
+proc glm data=COG;
+class GROUP;
+model ECOGT1 = GROUP/p;
+means GROUP/hovtest=BF;
+run;
+
+proc glm data=COG;
+class GROUP;
+model ECOGT2 = GROUP/p;
+means GROUP/hovtest=BF;
+run;
+
+proc glm data=COG;
+class GROUP;
+model ECOGT1 ECOGT2 = GROUP/nouni;
+repeated time 2;
+run;
+ods pdf close;
+
+*Used to generate demographic and anthropometric descriptives;
+
+ods pdf file="C:\Users\amcampit\Downloads\DCM Time 2 Demographics Output.pdf";
+proc import datafile="C:\Users\amcampit\Downloads\DCM Time 2 Data Analysis Set.Corrected.HeightWeight.xlsx"
+out=COG dbms=xlsx replace;
+run;
+
+proc means data=COG fw=8 maxdec=2 alpha=.05 clm mean std;
+var AGE Height Mass;
+run;
+ods pdf close;
