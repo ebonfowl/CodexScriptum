@@ -1,0 +1,78 @@
+import pandas as pd
+import numpy as np
+import plotly.express as px
+import datetime
+
+def isnumber(x):
+    try:
+        float(x)
+        return True
+    except:
+        return False
+
+def isdate(x):
+    try:
+        if x != datetime.datetime.strptime(x, '%Y-%m-%d').strftime('%Y-%m-%d'):
+            raise ValueError
+        return True
+    except ValueError:
+        return False
+
+def drop_nan(r):
+    r = list(r)
+    r = [x for x in r if isinstance(x, str) or not np.isnan(x)]
+    return r
+
+df = pd.read_csv('e:\\Documents\\RepOne Validation\\ABD4.csv', header=None)
+
+df.columns = ['type', 'geno', 'lat', 'long', 'date', 'time', 'lan', 'yap', 'junk']
+
+# ebonfowl: remove all cases of hybrids and non-ABDs
+
+df = df[df['type'] != 'hybrid']
+
+df = df[df['type'] != 'slash']
+
+df = df[df['geno'] == 'American Black Duck']
+
+# ebonfowl: remove all non-numbers from data set to get latitude and longitude
+
+df_coordinates = df[df.applymap(isnumber)]
+
+df_coordinates = pd.DataFrame.from_records(df_coordinates.apply(drop_nan, axis=1))
+df_coordinates.columns = df_coordinates.columns[:len(df_coordinates.columns)]
+
+# ebonfowl: remove all non-dates from the data set
+
+df_date = df[df.applymap(isdate)]
+
+df_date = pd.DataFrame.from_records(df_date.apply(drop_nan, axis=1))
+df_date.columns = df_date.columns[:len(df_date.columns)]
+
+# ebonfowl: combine coordinates and date frames
+
+frames = [df_coordinates, df_date]
+
+ducks = pd.concat(frames, axis=1)
+
+ducks.columns = ['lat', 'long', 'date']
+
+ducks["date"] = pd.to_datetime(ducks["date"], format="%Y-%m-%d %H:%M")
+
+# ebonfowl: divide duck sitings into summer and winter
+
+summer_ducks = ducks[ducks['date'].dt.month.isin([6,7,8])]
+
+winter_ducks = ducks[ducks['date'].dt.month.isin([12,1,2])]
+
+# ebonfowl: graph summer ducks
+
+fig = px.scatter_geo(summer_ducks,lat='lat',lon='long', hover_name="date")
+fig.update_layout(title = 'World map', title_x=0.5)
+fig.show()
+
+# ebonfowl: graph winter ducks
+
+fig = px.scatter_geo(winter_ducks,lat='lat',lon='long', hover_name="date")
+fig.update_layout(title = 'World map', title_x=0.5)
+fig.show()
