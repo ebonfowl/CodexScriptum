@@ -124,6 +124,159 @@ pdf.ln(10)
 pdf.set_font('Arial', size=12)
 pdf.multi_cell(190, 5, 'The repeatable battery for the assessment of neurolopsychological status (RBANS) is a brief, individually administered battery to measure neuropsychological cognitive status, and given iteratively over time to assess decline or improvement. The assessment was developed for the dual purposes of identifying and characterizing abnormal cognitive decline in the older adult and as a neuropsychological screening battery for younger patients.\n \nTotal Score Categories:\nOver130: Very Superior\n120-129: Superior\n110-119: High Average\n90-109: Average\n80-89: Low Average\n70-79: Borderline\nBelow 69: Extremely Low', 0)
 
+# ebonfowl: RBANS Immediate Memory Index
+
+pdf.add_page()
+pdf.set_font('Arial', 'B', 16)
+pdf.cell(190, 6, 'RBANS Immediate Memory Index', align = 'C')
+pdf.ln(10)
+pdf.set_font('Arial', size=12)
+pdf.multi_cell(190, 5, 'The RBANS immediate memory index indicates a participant\'s ability to learn, and retain presented information when asked to recall that information immediately after presentation. Immediate memory is scored based off the ability to learn a short list of words and a short story, then immediately accurately recall that information to the test administrator. A score of 100 is an average score for immediate memory, and scores below 70 are very low. Lower immediate memory index scores indicate difficulty with verbal learning and memory.', 0)
+
+# ebonfowl: RBANS Visuospatial Index
+
+pdf.add_page()
+pdf.set_font('Arial', 'B', 16)
+pdf.cell(190, 6, 'RBANS Visuospatial Index', align = 'C')
+pdf.ln(10)
+pdf.set_font('Arial', size=12)
+pdf.multi_cell(190, 5, 'The RBANS Visuospatial Index assesses a participant\'s visual perception, assessment of the spatial relationship of objects, and ability to copy a design from a model. Participants are scored based on ability to copy a figure, and correctly identify the orientation of lines in reference to a fixed object. A score of 100 is an average score for visuospatial index, and scores below 70 are very low. Lower total scores are indicative of difficulty processing and therefore using visual information.', 0)
+
+# ebonfowl: RBANS Language Index
+
+pdf.add_page()
+pdf.set_font('Arial', 'B', 16)
+pdf.cell(190, 6, 'RBANS Language Index', align = 'C')
+pdf.ln(10)
+pdf.set_font('Arial', size=12)
+pdf.multi_cell(190, 5, 'The RBANS Language Index indicates a participant\'s fluency and ability in expressive language use. The Language Index is scored from ability in naming a pictures of objects and listing examples of a specific semantic category. A score of 100 is an average score for language, and scores below 70 are very low. Lower scores in this index imply difficulties with language, either in learning or remembering language. However, lower scores could also be attributed to deficits when considering fluency versus naming skills or vice versa.', 0)
+
+# ebonfowl: RBANS Attention Index
+
+pdf.add_page()
+pdf.set_font('Arial', 'B', 16)
+pdf.cell(190, 6, 'RBANS Attention Index', align = 'C')
+pdf.ln(10)
+pdf.set_font('Arial', size=12)
+pdf.multi_cell(190, 5, 'The RBANS Attention Index evaluates a participant\'s ability to remember and manipulate visual and oral information in short-term memory storage. Scoring for attention is based off the ability to accurately repeat strings of numbers and quickly fill numbers corresponding to symbols. A score of 100 is an average score for attention, and scores below 70 are very low. Lower Attention Index scores can indicate low average attentiveness, and either low visual or auditory processing speed.', 0)
+
+# ebonfowl: RBANS Delayed Memory Index
+
+pdf.add_page()
+pdf.set_font('Arial', 'B', 16)
+pdf.cell(190, 6, 'RBANS Delayed Memory Index', align = 'C')
+pdf.ln(10)
+pdf.set_font('Arial', size=12)
+pdf.multi_cell(190, 5, 'The RBANS Delayed Memory Index is similar to the Immediate Memory Index, but measures delayed recall and recognition for verbal and visual information. Delayed memory tests the participant\'s ability, after completing several other tasks, to recall a list of words, choose these words from a list, recall a story, and draw a figure from memory. A score of 100 is an average score for delayed memory, and scores below 70 are very low. Lower scores in these assesments indicate difficulty in recognizing or retrieving long-term memory. Since this index contains both visual and auditory tests, difficulties with sight or hearing can also impact the total score.', 0)
+
+# ebonfowl: RBANS List Learning
+
+pdf.add_page()
+pdf.set_font('Arial', 'B', 16)
+pdf.cell(190, 6, 'RBANS List Learning', align = 'C')
+pdf.ln(10)
+pdf.set_font('Arial', size=12)
+pdf.multi_cell(190, 5, 'The RBANS List Learning subtest assesses a participant\'s ability to learn a list of words, and measures habitual verbal memory function. A list of 10 words is read to the participant, who is then responsible for repeating back as many words as they remember, in any order. This process is repeated a total of 4 times. For each word the participant correctly recalls, 1 point is earned. Scores for this assessment range from 0 to 40. Lower scores indicate a difficulty learning new verbal information, and that repitition may not significantly improve learning ability for that individual. There are no established reference ranges for this individual assessment, but results are included to illustrate change over time.', 0)
+
+# ebonfowl: RBANS Story Memory
+
+pdf.add_page()
+pdf.set_font('Arial', 'B', 16)
+pdf.cell(190, 6, 'RBANS Story Memory', align = 'C')
+pdf.ln(10)
+pdf.set_font('Arial', size=12)
+pdf.multi_cell(190, 5, 'The RBANS Story Memory subtest tests a participant\'s ability to memorize conceptually related verbal information in the form of a short story. A short story is read to the participant, who repeats back as much of the story as they remember. The process is repeated once more, with the participant earning 1 point for each keyword repeated verbatim. Story memory scores range from 0 to 24. Lower scores indicate difficulty learning new verbal information, and that repitition may not significantly improve learning ability. There are no established reference ranges for this individual assessment, but results are included to illustrate change over time.', 0)
+
+# ebonfowl: RBANS Figure Copy
+
+pdf.add_page()
+pdf.set_font('Arial', 'B', 16)
+pdf.cell(190, 6, 'RBANS Figure Copy', align = 'C')
+pdf.ln(10)
+pdf.set_font('Arial', size=12)
+pdf.multi_cell(190, 5, 'XXXX', 0)
+
+# ebonfowl: RBANS Line Orientation
+
+pdf.add_page()
+pdf.set_font('Arial', 'B', 16)
+pdf.cell(190, 6, 'RBANS Line Orientation', align = 'C')
+pdf.ln(10)
+pdf.set_font('Arial', size=12)
+pdf.multi_cell(190, 5, 'XXXX', 0)
+
+# ebonfowl: RBANS Picture Naming
+
+pdf.add_page()
+pdf.set_font('Arial', 'B', 16)
+pdf.cell(190, 6, 'RBANS Picture Naming', align = 'C')
+pdf.ln(10)
+pdf.set_font('Arial', size=12)
+pdf.multi_cell(190, 5, 'XXXX', 0)
+
+# ebonfowl: RBANS Semantic Fluency
+
+pdf.add_page()
+pdf.set_font('Arial', 'B', 16)
+pdf.cell(190, 6, 'RBANS Semantic Fluency', align = 'C')
+pdf.ln(10)
+pdf.set_font('Arial', size=12)
+pdf.multi_cell(190, 5, 'XXXX', 0)
+
+# ebonfowl: RBANS Digit Span
+
+pdf.add_page()
+pdf.set_font('Arial', 'B', 16)
+pdf.cell(190, 6, 'RBANS Digit Span', align = 'C')
+pdf.ln(10)
+pdf.set_font('Arial', size=12)
+pdf.multi_cell(190, 5, 'XXXX', 0)
+
+# ebonfowl: RBANS Coding
+
+pdf.add_page()
+pdf.set_font('Arial', 'B', 16)
+pdf.cell(190, 6, 'RBANS Coding', align = 'C')
+pdf.ln(10)
+pdf.set_font('Arial', size=12)
+pdf.multi_cell(190, 5, 'XXXX', 0)
+
+# ebonfowl: RBANS List Recall
+
+pdf.add_page()
+pdf.set_font('Arial', 'B', 16)
+pdf.cell(190, 6, 'RBANS List Recall', align = 'C')
+pdf.ln(10)
+pdf.set_font('Arial', size=12)
+pdf.multi_cell(190, 5, 'XXXX', 0)
+
+# ebonfowl: RBANS Story Recall
+
+pdf.add_page()
+pdf.set_font('Arial', 'B', 16)
+pdf.cell(190, 6, 'RBANS Story Recall', align = 'C')
+pdf.ln(10)
+pdf.set_font('Arial', size=12)
+pdf.multi_cell(190, 5, 'XXXX', 0)
+
+# ebonfowl: RBANS List Recognition
+
+pdf.add_page()
+pdf.set_font('Arial', 'B', 16)
+pdf.cell(190, 6, 'RBANS List Recognition', align = 'C')
+pdf.ln(10)
+pdf.set_font('Arial', size=12)
+pdf.multi_cell(190, 5, 'XXXX', 0)
+
+# ebonfowl: RBANS Figure Recall
+
+pdf.add_page()
+pdf.set_font('Arial', 'B', 16)
+pdf.cell(190, 6, 'RBANS Figure Recall', align = 'C')
+pdf.ln(10)
+pdf.set_font('Arial', size=12)
+pdf.multi_cell(190, 5, 'XXXX', 0)
+
 # ebonfowl: ECOG-12
 
 pdf.add_page()
@@ -178,6 +331,15 @@ pdf.ln(10)
 pdf.set_font('Arial', size=12)
 pdf.multi_cell(190, 5, 'The UCLA Loneliness Scale is designed to measure one\'s subjective feelings of loneliness as well as feelings of social isolation. The scale is scored with a 4-point Likert type scale with possible scores that range from 20-80. Higher scores indicate higher levels of loneliness.', 0)
 
+# ebonfowl: PHQ-9
+
+pdf.add_page()
+pdf.set_font('Arial', 'B', 16)
+pdf.cell(190, 6, 'PHQ-9', align = 'C')
+pdf.ln(10)
+pdf.set_font('Arial', size=12)
+pdf.multi_cell(190, 5, 'XXXX', 0)
+
 # ebonfowl: Start anthropometric assessments
 
 # ebonfowl: Height
@@ -224,15 +386,6 @@ pdf.set_font('Arial', size=12)
 
 # ebonfowl: Start pysiological health assessments
 
-# ebonfowl: PHQ-9
-
-pdf.add_page()
-pdf.set_font('Arial', 'B', 16)
-pdf.cell(190, 6, 'PHQ-9', align = 'C')
-pdf.ln(10)
-pdf.set_font('Arial', size=12)
-pdf.multi_cell(190, 5, 'I don\'t think this one was right.', 0)
-
 # ebonfowl: SF-12
 
 pdf.add_page()
@@ -278,6 +431,42 @@ pdf.ln(10)
 pdf.set_font('Arial', size=12)
 pdf.multi_cell(190, 5, 'Triglycerides refer to fat molecules in the bloodstream. When you eat, your body converts calories it doesn\'t need into triglycerides, which are stored in fat cells. High triglyceride levels are associated with being overweight, eating too many sweets or drinking too much alcohol, smoking, being sedentary, or having diabetes with elevated blood sugar levels. Triglyceride concentrations below 150 mg/dl are considered healthy', 0)
 
+# ebonfowl: Blood Glucose
+
+pdf.add_page()
+pdf.set_font('Arial', 'B', 16)
+pdf.cell(190, 6, 'Blood Glucose', align = 'C')
+pdf.ln(10)
+pdf.set_font('Arial', size=12)
+pdf.multi_cell(190, 5, 'XXXX', 0)
+
+# ebonfowl: Resting Heart Rate
+
+pdf.add_page()
+pdf.set_font('Arial', 'B', 16)
+pdf.cell(190, 6, 'Resting Heart Rate', align = 'C')
+pdf.ln(10)
+pdf.set_font('Arial', size=12)
+pdf.multi_cell(190, 5, 'XXXX', 0)
+
+# ebonfowl: Systolic Blood Pressure
+
+pdf.add_page()
+pdf.set_font('Arial', 'B', 16)
+pdf.cell(190, 6, 'Systolic Blood Pressure', align = 'C')
+pdf.ln(10)
+pdf.set_font('Arial', size=12)
+pdf.multi_cell(190, 5, 'XXXX', 0)
+
+# ebonfowl: Diastolic Blood Pressure
+
+pdf.add_page()
+pdf.set_font('Arial', 'B', 16)
+pdf.cell(190, 6, 'Diastolic Blood Pressure', align = 'C')
+pdf.ln(10)
+pdf.set_font('Arial', size=12)
+pdf.multi_cell(190, 5, 'XXXX', 0)
+
 # ebonfowl: Start physical function assessments
 
 # ebonfowl: IPAQ
@@ -288,6 +477,42 @@ pdf.cell(190, 6, 'IPAQ', align = 'C')
 pdf.ln(10)
 pdf.set_font('Arial', size=12)
 pdf.multi_cell(190, 5, 'International Physical Activity Questionnaire IPAQ: The IPAQ was developed to measure health related physical activity in populations The short version of the IPAQ has been tested extensively and is now used in many international studies.', 0)
+
+# ebonfowl: SPPB
+
+pdf.add_page()
+pdf.set_font('Arial', 'B', 16)
+pdf.cell(190, 6, 'SPPB', align = 'C')
+pdf.ln(10)
+pdf.set_font('Arial', size=12)
+pdf.multi_cell(190, 5, 'XXXX', 0)
+
+# ebonfowl: 10-meter Walk
+
+pdf.add_page()
+pdf.set_font('Arial', 'B', 16)
+pdf.cell(190, 6, '10-meter Walk', align = 'C')
+pdf.ln(10)
+pdf.set_font('Arial', size=12)
+pdf.multi_cell(190, 5, 'XXXX', 0)
+
+# ebonfowl: Handgrip Strength
+
+pdf.add_page()
+pdf.set_font('Arial', 'B', 16)
+pdf.cell(190, 6, 'Handgrip Strength', align = 'C')
+pdf.ln(10)
+pdf.set_font('Arial', size=12)
+pdf.multi_cell(190, 5, 'XXXX', 0)
+
+# ebonfowl: Dual Task
+
+pdf.add_page()
+pdf.set_font('Arial', 'B', 16)
+pdf.cell(190, 6, 'Dual Task', align = 'C')
+pdf.ln(10)
+pdf.set_font('Arial', size=12)
+pdf.multi_cell(190, 5, 'XXXX', 0)
 
 # ebonfowl: concatonate strings to form unique pdf name
 
