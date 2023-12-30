@@ -34,3 +34,6 @@ Python script that provides a template for creating SLURM scheduler scripts for 
 # RonsCode.py  
 Python workflow for creating gene transcription trajectories using dynamo.  
 Note: this is not working code, rather it was created as a template for another researcher who was unfamiliar with omics work in python.  
+
+# DCMreport.py  
+Python script which produced the post-study reports provided to participants following the conclusion of a large NIH grant-funded research project. Automatically pulls in data, produces graphs, and compiles everything into a 5 page PDF for each participant. Command line argument parsing was not implemented, but commented code framework exists for that functionality.  
