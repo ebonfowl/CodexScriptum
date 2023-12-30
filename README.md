@@ -29,11 +29,17 @@ R script that fits CFA and SEM models for latent measures of muscle quality and 
 Python script that parses the COVID-19 genome using fasta output.  
 
 # write_pinnacle_slurm.py  
-Python script that provides a template for creating SLURM scheduler scripts for an HPC cluster.
+Python script that provides a template for creating SLURM scheduler scripts for an HPC cluster.  
 
 # RonsCode.py  
 Python workflow for creating gene transcription trajectories using dynamo.  
 Note: this is not working code, rather it was created as a template for another researcher who was unfamiliar with omics work in python.  
 
 # DCMreport.py  
-Python script which produced the post-study reports provided to participants following the conclusion of a large NIH grant-funded research project. Automatically pulls in data, produces graphs, and compiles everything into a 5 page PDF for each participant. Command line argument parsing was not implemented, but commented code framework exists for that functionality.  
+Python script which produced the post-study reports provided to participants following the conclusion of a large NIH grant-funded research project. Automatically pulls in data, produces graphs, and compiles everything into a 55-page PDF for each participant. Command line argument parsing was not implemented, but commented code framework exists for that functionality.  
+
+# DCM_T4_LinearMixedModel.R  
+R script to assemble our standard (wide format) study database into long/nested format and run the analysis for our study as a linear mixed model with random intercepts and slopes. Produces fixed and random effects for the model as ANOVA or ANOVA-like tables.  
+
+# SEM_NHANES.R  
+R script that tests data extracted from the NHANES study for multivariate normality and then fits CFA and SEM models measuring metabolic syndrome severity as a latent variable and regressing it on sedentary behavior duration and physical activity/exercise duration.  
