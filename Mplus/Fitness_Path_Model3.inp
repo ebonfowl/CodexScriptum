@@ -1,0 +1,19 @@
+TITLE:  !Title of your analysis
+    Roth et al.'s (1989) Illness Model
+    Fit Assessment Exercise Model II
+DATA: 
+    file is L:\_UArk_Courses\ESRM_699V_SEM\Mplus\Roth.txt;    
+    nobservations=373;     
+    type= means std correlation;        !type of data
+VARIABLE:
+    name are exercise hardy fitness stress illness;      !variable names
+    usevariable exercise hardy fitness stress illness;   !variables are using in this analysis
+MODEL:
+    fitness on exercise;
+    stress on hardy fitness;
+    illness on stress;
+
+OUTPUT:
+    SAMPSTAT;   !sample statistics
+    STD;        !standardized parameter estimate (default)        
+    STDYX;

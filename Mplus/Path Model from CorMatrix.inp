@@ -1,0 +1,20 @@
+TITLE:  !Title of your analysis
+    Path Analysis example using Reading Self Concept, 
+    Math Self Concept, Task Goal Orientation, & Math SAT
+DATA: 
+    FILE IS "F:\ESRM6523_MPLUS\DATA\L04_EX2_Path_Corr.dat";    
+    NOBSERVATIONS = 1000;     
+    TYPE = means std correlation ;        !type of data
+VARIABLE:
+    NAME ARE readsc mathsc goals satmath;      !variable names
+    USEVARIABLE readsc mathsc goals satmath;   !variables are using in this analysis
+MODEL:
+    goals ON readsc mathsc;
+    satmath ON goals readsc mathsc;
+    readsc with mathsc;
+MODEL INDIRECT: !IND – request a specific indirect effect or a set of indirect effects
+    SATMATH IND GOALS READSC;   !READSC -> GOALS -> SATMATH
+    SATMATH IND GOALS MATHSC;   !MATHSC -> GOALS -> SATMATH
+OUTPUT:
+    SAMPSTAT;   !sample statistics
+    STDYX;      !linear regression of y on x

@@ -1,0 +1,20 @@
+ !Using EXCLAMATION mark "!" to add your notes 
+ !Title of your analysis 
+TITLE: 
+    Multiple Regression using Reading Self Concept and 
+    Math Self Concept to predict Task Goal Orientation.
+
+DATA: 
+    FILE IS "F:\ESRM6523_MPLUS\DATA\L04_EX1_REG_COV.dat"; !DATA LOCATION
+    NOBSERVATIONS = 1000;     !the number of observations have to be included
+    TYPE = covariance;        !type of data
+VARIABLE:
+    NAME ARE readsc mathsc goals;      !variable names
+    USEVARIABLE readsc mathsc goals;   !variables are using in this analysis
+!ANALYSIS:
+    !TYPE =basic;                      !descriptive statistics - means and sd
+MODEL:
+    goals ON readsc mathsc;
+    readsc with mathsc
+OUTPUT:
+    SAMPSTAT STDYX;

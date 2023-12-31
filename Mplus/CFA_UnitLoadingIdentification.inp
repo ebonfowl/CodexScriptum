@@ -1,0 +1,16 @@
+TITLE:
+    M1 - Factor model for 
+    Problem Orientation component of the SPSI (ULI)
+    !note: You cannot use "Model 1" in the title.  
+    !The program will confuse and activated the "MODEL"command
+DATA:
+    file is E:\ESRM6523\Mplus\spsi.DAT;    
+    nobservations=192;     
+    type= means std correlation;        !type of data
+VARIABLE:
+    names are COG EMOTION BEHAV PROBDEF ALTSOL DECIS IMP;      !variable names
+    usevariable COG EMOTION BEHAV;   !variables are using in this analysis
+MODEL:
+    F1 BY COG EMOTION BEHAV;
+OUTPUT:
+    SAMPSTAT, STDYX, STANDARDIZED, RESIDUAL;

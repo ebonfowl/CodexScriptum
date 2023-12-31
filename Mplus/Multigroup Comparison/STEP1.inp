@@ -1,0 +1,40 @@
+TITLE: 
+    Multiple Group Invariance ~FIRST STEP
+DATA: 
+	FILE = "E:\ESRM6523\Mplus\L13\USA_MS.dat"; 
+VARIABLE: 
+	NAMES = id sex Q1-Q7; 	
+    USEVARIABLES = Q1-Q7; 
+	GROUPING = sex (1= female 2= male); 
+ANALYSIS: 	
+    ESTIMATOR = MLR; 
+OUTPUT: 
+    MODINDICES(3.84); STDYX; RESIDUAL; 
+
+MODEL: 
+! Factor loadings all freely estimated, just labeled
+    F1 BY Q1* Q4 Q5 (L1 L4 L5);
+    F2 BY Q2* Q3 Q6 Q7 (L2 L3 L6 L7); 
+    F1 WITH F2 (C1);
+! Item intercepts all freely estimated, just labeled
+    [Q1* Q2* Q3* Q4* Q5* Q6* Q7*](I1-I7);
+! Residual variances all freely estimated, just labeled
+    Q1* Q2* Q3* Q4* Q5* Q6* Q7*(E1-E7);
+! Factor variance fixed to 1 for identification (UVI)
+    F1@1;F2@1;
+! Factor mean fixed to 0 for identification (Mplus forces)
+    [F1@0 F2@0];
+
+MODEL male:
+! Factor loadings all freely estimated, not labeled – NO constraints
+    F1 BY Q1* Q4 Q5;
+    F2 BY Q2* Q3 Q6 Q7; 
+    F1 WITH F2; 
+! Item intercepts all freely estimated, not labeled – NO constraints
+    [Q1* Q2* Q3* Q4* Q5* Q6* Q7*]; 
+! Residual variances all freely estimated, not labeled – NO constraints
+    Q1* Q2* Q3* Q4* Q5* Q6* Q7*;
+! Factor variance fixed to 1 for identification (UVI)
+    F1@1;F2@1;
+! Factor mean fixed to 0 for identification 
+    [F1@0 F2@0];

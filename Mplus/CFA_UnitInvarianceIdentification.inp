@@ -1,0 +1,14 @@
+TITLE:
+    M2: Factor model for Problem Orientation component of the SPSI (UVI)
+DATA:
+    file is "E:\ESRM6523\Mplus\spsi.DAT";    
+    nobservations=192;     
+    type= means std correlation;        !type of data
+VARIABLE:
+    name are COG EMOTION BEHAV PROBDEF ALTSOL DECIS IMP;      !variable names
+    usevariable COG EMOTION BEHAV;   !variables are using in this analysis
+MODEL:
+    F1 BY COG* EMOTION* BEHAV*;
+    F1@1;
+OUTPUT:
+    SAMPSTAT, STDYX, STANDARDIZED, RESIDUAL;

@@ -1,0 +1,17 @@
+TITLE:
+    M3: Uncorrelated two-factor model for SPSI
+DATA:
+    file is "E:\ESRM6523\Mplus\spsi.DAT";    
+    nobservations=192;     
+    type= means std correlation;        !type of data
+VARIABLE:
+    name are COG EMOTION BEHAV PROBDEF ALTSOL DECIS IMP;      !variable names
+    usevariable COG EMOTION BEHAV PROBDEF ALTSOL DECIS IMP;   !variables are using in this analysis
+MODEL:
+    F1 BY COG* EMOTION* BEHAV*;
+    F2 BY PROBDEF* ALTSOL* DECIS* IMP*;
+    F1@1;
+    F2@1;
+    F1 WITH F2@0;
+OUTPUT:
+    SAMPSTAT, STDYX, STANDARDIZED, RESIDUAL;
