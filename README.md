@@ -2,7 +2,7 @@
 Scripts I made for research and data analysis  
 
 # reponecalcs580v.py  
-Python script that does the full data analysis for a study validating a linear position transducer (RepOne) as a power measuring device during a sit-to-stand task.  
+Python script that does the full data analysis for a study validating a linear position transducer (RepOne) as a power measuring device during a sit-to-stand task against motion analysis and force platform gold standard measure of power.  
 Script pulls in raw data, makes all necessary calculations, runs all needed stats, then outputs graphs and text files for all results.  
 
 # TOST_power.R  
@@ -29,7 +29,7 @@ R script that fits CFA and SEM models for latent measures of muscle quality and 
 Python script that parses the COVID-19 genome using fasta output.  
 
 # write_pinnacle_slurm.py  
-Python script that provides a template for creating SLURM scheduler scripts for an HPC cluster.  
+Python script that provides a template for creating SLURM scheduler scripts for an HPC cluster. Also contains the framewok for command line functionality with arguments.  
 
 # RonsCode.py  
 Python workflow for creating gene transcription trajectories using dynamo.  
