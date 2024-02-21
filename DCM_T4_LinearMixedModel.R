@@ -28,13 +28,13 @@ dfLong <- within(dfLong, TimePoint[time == 'T4'] <- "T4")
 ANU <- dfLong
 
 ANU.model <- lmer(ANUADRIPROTECT ~ Group*Month + Age + (1 + Month|ID), data = ANU, REML = FALSE, control = lmerControl(optimizer ="Nelder_Mead"))
-ANU.null <- lmer(ANUADRIPROTECT ~ Age + (1 + Month|ID), data = ANU, REML = FALSE, control = lmerControl(optimizer ="Nelder_Mead"))
+ANU.null <- lmer(ANUADRIPROTECT ~ (1 + Month|ID), data = ANU, REML = FALSE, control = lmerControl(optimizer ="Nelder_Mead"))
 ANU.compare <- anova(ANU.null,ANU.model)
 ANU.anova <- anova(ANU.model)
 # emmip(ANU.model, ANUADRIPROTECT ~ Group * Month)
 
 ECOG.model <- lmer(ECOG ~ Group*Month + Age + (1 + Month|ID), data = ANU, REML = FALSE, control = lmerControl(optimizer ="Nelder_Mead"))
-ECOG.null <- lmer(ECOG ~ Age + (1 + Month|ID), data = ANU, REML = FALSE, control = lmerControl(optimizer ="Nelder_Mead"))
+ECOG.null <- lmer(ECOG ~ (1 + Month|ID), data = ANU, REML = FALSE, control = lmerControl(optimizer ="Nelder_Mead"))
 ECOG.compare <- anova(ECOG.null,ECOG.model)
 ECOG.anova <- anova(ECOG.model)
 
