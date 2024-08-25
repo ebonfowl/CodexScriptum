@@ -128,7 +128,7 @@ while restart:
 
                 framegrouped['Disp_Vert'] = framegrouped['Z_Cent'].sub(framegrouped['Z_Cent'].shift(1))
 
-                framegrouped['Vel_Vert'] = framegrouped['Disp_Vert']/0.01666666667/1000
+                framegrouped['Vel_Vert'] = framegrouped['Disp_Vert']/0.01/1000
 
                 # ebonfowl: calculate resultant velocity from displacement
 
@@ -297,7 +297,7 @@ df.to_csv('test.csv')
 
 aptendo = pd.DataFrame()
 
-aptendo['Atest'] = df['STS_avg_pow_res']
+aptendo['Atest'] = df['STS_avg_pow_vert']
 
 aptendo['Btest'] = df['TENDO_AP']
 
@@ -333,7 +333,7 @@ TAPtost = TOST(TAPa, TAPb, low, upp)
 
 pptendo = pd.DataFrame()
 
-pptendo['Atest'] = df['STS_peak_pow_res']
+pptendo['Atest'] = df['STS_peak_pow_vert']
 
 pptendo['Btest'] = df['TENDO_PP']
 
@@ -367,7 +367,7 @@ TPPtost = TOST(TPPa, TPPb, low, upp)
 
 avtendo = pd.DataFrame()
 
-avtendo['Atest'] = df['STS_avg_vel_res']
+avtendo['Atest'] = df['STS_avg_vel_vert']
 
 avtendo['Btest'] = df['TENDO_AV']
 
@@ -401,7 +401,7 @@ TAVtost = TOST(TAVa, TAVb, low, upp)
 
 pvtendo = pd.DataFrame()
 
-pvtendo['Atest'] = df['STS_peak_vel_res']
+pvtendo['Atest'] = df['STS_peak_vel_vert']
 
 pvtendo['Btest'] = df['TENDO_PV']
 
@@ -469,7 +469,7 @@ RAPtost = TOST(RAPa, RAPb, low, upp)
 
 avrepone = pd.DataFrame()
 
-avrepone['Atest'] = df['STS_avg_vel_res']
+avrepone['Atest'] = df['STS_avg_vel_vert']
 
 avrepone['Btest'] = df['REPONE_AV']
 
@@ -503,7 +503,7 @@ RAVtost = TOST(RAVa, RAVb, low, upp)
 
 pvrepone = pd.DataFrame()
 
-pvrepone['Atest'] = df['STS_peak_vel_res']
+pvrepone['Atest'] = df['STS_peak_vel_vert']
 
 pvrepone['Btest'] = df['REPONE_PV']
 
