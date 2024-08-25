@@ -2,7 +2,7 @@
 Scripts I made for research and data analysis  
 
 # CMJ_Calcs.py  
-Python script to calculate the power produced in a counter-movement jump from trajectory and force plate data.  
+Python script to calculate the power produced in a counter-movement jump from trajectory and force plate data. Also contains code which re-organizes combined over-under trajectory and force files into a long format for analysis.  
 
 # DCM_LGM.R  
 R script using linear growth modeling to fit growth trends for participants' cognitive health response to a health coaching intervention.  
