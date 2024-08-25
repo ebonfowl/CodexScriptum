@@ -5,10 +5,10 @@ Scripts I made for research and data analysis
 Python script to calculate the power produced in a counter-movement jump from trajectory and force plate data. Also contains code which re-organizes combined over-under trajectory and force files into a long format for analysis.  
 
 # DCM_LGM.R  
-R script using linear growth modeling to fit growth trends for participants' cognitive health response to a health coaching intervention.  
+R script using linear growth modeling to estimate growth trajectories for participants' cognitive health response to a health coaching intervention.  
 
 # DCM_MCMC_LGM.R  
-R script using Bayseian linear growth modeling to fit growth trends for participants' cognitive health response to a health coaching intervention. Also conducts all QC checks in accordance with the WAMBS checklist.    
+R script using Bayseian linear growth modeling to estimate growth trajectories for participants' cognitive health response to a health coaching intervention. Also conducts all QC checks in accordance with the WAMBS checklist.    
 
 # DCM_T4_LinearMixedModel.R  
 R script to assemble our standard (wide format) study database into long/nested format and run the analysis for our study as a linear mixed model with random intercepts and slopes. Produces fixed and random effects for the model as ANOVA or ANOVA-like tables.  
@@ -29,7 +29,7 @@ R script that runs all the stats for the validation of a novel digital neuropsyc
 Python script that parses the COVID-19 genome using fasta output.  
 
 # PFQ_BEFA.R  
-R script which performs a Bayesian exploratory factor analysis to extract the factor structure of related physical function data collected from adults over the age of 50. Also performs initial simulations to aid in prior selection.  
+R script which performs a Bayesian exploratory factor analysis to extract the factor structure of related physical function data collected from adults over the age of 50. Performs initial simulations to aid in prior selection. Performs confirmatory factor analyses on the extrracted models (not defined automatically) using Bayesian CFA, conducts all QC checks in accordance with the WAMBS checklist, and then extracts factor scores for each participant.  
 
 # PrelimSEM.R  
 R script that fits CFA and SEM models for latent measures of muscle quality and walking ability and reports fit indices.  
