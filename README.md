@@ -1,6 +1,9 @@
 # CodexScriptum  
 Scripts I made for research and data analysis  
 
+# BinaryPictureCreator.py  
+Python script which converts an image to a map of 1s and 0s, making it look like it is composed of binary code. Used to create the logo for a new data science program we are creating at my university. 
+
 # CMJ_Calcs.py  
 Python script to calculate the power produced in a counter-movement jump from trajectory and force plate data. Also contains code which re-organizes combined over-under trajectory and force files into a long format for analysis.  
 
