@@ -34,6 +34,9 @@ Python script that parses the COVID-19 genome using fasta output.
 # PFQ_BEFA.R  
 R script which performs a Bayesian exploratory factor analysis to extract the factor structure of related physical function data collected from adults over the age of 50. Performs initial simulations to aid in prior selection. Performs confirmatory factor analyses on the extrracted models (not defined automatically) using Bayesian CFA, conducts all QC checks in accordance with the WAMBS checklist, and then extracts factor scores for each participant.  
 
+# PowerAccelCalcs.py  
+Python script which converts accelerometry output from an IMU into global acceleration vectors. The global vectors are then used to calculate power by iterating from sample to sample to establish position, velocity and finally power. THough this works in theory, any IMU error summates and true position drifts, making this approach untenable with current IMU technology.  
+
 # PrelimSEM.R  
 R script that fits CFA and SEM models for latent measures of muscle quality and walking ability and reports fit indices.  
 
